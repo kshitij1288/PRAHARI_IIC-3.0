@@ -5,60 +5,34 @@ PRAHARI is an IoT + AI-based landslide risk monitoring system that collects envi
 ## 📁 Project Structure
 
 ```text
-PRAHARI/
+PRAHARI_IIC-3.0/
 │
-├── backend/
-│   ├── data/              # Wayanad datasets
-│   ├── model/             # ML model and metrics
-│   ├── src/               # Backend source files
-│   ├── server.js          # Backend API
-│   ├── train_model.py     # ML training
-│   ├── sample-payload.json# Sample sensor data
-│   ├── package.json
-│   └── Dockerfile
+├── PRAHARI_BACKEND-main/
+│   └── PRAHARI_BACKEND-main/
+│       ├── data/              # Wayanad datasets
+│       ├── model/             # ML model and metrics
+│       ├── src/               # Backend source files
+│       ├── server.js          # Backend API server
+│       ├── train_model.py     # ML model training
+│       ├── sample-payload.json# Sample sensor data
+│       ├── package.json       # Backend dependencies
+│       └── Dockerfile         # Deployment configuration
 │
-├── frontend/
-│   ├── public/            # Static files
-│   ├── src/
-│   │   ├── assets/        # Logo and images
-│   │   ├── PrahariDashboard.jsx
-│   │   └── main.jsx
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.js
+├── PRAHARI_FRONTEND-main/
+│   └── PRAHARI_IIC_3.0-main/
+│       ├── public/            # Static files
+│       ├── src/               # React application
+│       │   ├── assests/       # Logo and images
+│       │   ├── PrahariDashboard.jsx
+│       │   └── main.jsx
+│       ├── index.html
+│       ├── package.json
+│       └── vite.config.js
 │
-├── esp32/
-│   └── prahari_esp_v3.ino # ESP32 firmware
+├── prahari_esp_v3/
+│   └── prahari_esp_v3.ino    # ESP32 firmware
 │
+├── render-dashboard.png       # Dashboard screenshot
+├── vercel-dashboard.png       # Dashboard screenshot
+├── website.png                # Website screenshot
 └── README.md
-```
-
-## 🔄 System Flow
-
-```text
-ESP32 + Sensors
-      ↓
-Backend API
-      ↓
-ML Risk Prediction
-      ↓
-Web Dashboard
-```
-
-### Hardware
-
-ESP32 collects soil moisture, temperature, humidity, pressure, rain and vibration data.
-
-### Backend
-
-Node.js/Express receives sensor data and provides the API for the dashboard.
-
-### ML
-
-The ML model is **currently being trained using Wayanad landslide data**. It is still under development and is **not yet ready to be trained/generalized for additional regions or larger datasets**.
-
-### Frontend
-
-React + Vite displays sensor readings, risk level, charts and system status.
-
-> **Current Status:** Prototype under development. The ML model is currently focused on Wayanad data and requires further training and validation before being extended to other datasets or regions.
